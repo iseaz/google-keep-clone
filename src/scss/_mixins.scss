@@ -1,0 +1,27 @@
+$localPath: '';
+
+@mixin font-face($fontname, $path, $name){
+	font-family: $fontname;
+	src: url($path + $name + '.eot');
+	src: url($path + $name + '.eot?#iefix') format('embedded-opentype'),
+		 url($path + $name + '.svg#' + $fontname) format('svg'),
+		 url($path + $name + '.woff') format('woff'),
+		 url($path + $name + '.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$break-small: 768px;
+$break-medium: 992px;
+
+@mixin r($media){
+	@if $media == tp {
+		@media (min-width: $break-small) { @content; }
+	}
+	@else if $media == tl {
+		@media (min-width: $break-medium) { @content; }
+	}
+	@else if $media == d {
+		@media (min-width: 1024px) { @content; }
+	}
+}

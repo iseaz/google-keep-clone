@@ -1,0 +1,34 @@
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'reset';
+@import 'mixins';
+@import 'typo';
+
+* {
+	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+html {
+	font-size: 75%;
+}
+body {
+	color: #333;
+	font-family: Arial;
+	font-size: 1em; //12px
+	line-height: $line-height-base;
+}
+.row {
+	@include clearfix;
+}
+.container {
+	min-height: 100%;
+	position: relative;
+}
